@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">잔문 편집실 — 두 장의 남겨진 종이</title>
+  <rect x="3" y="3" width="90" height="90" fill="#753d3b"/>
+  <g fill="none" stroke="#f5f2eb" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M24 21h33v54H24z" stroke-width="2.4"/>
+    <path d="M36 31h36v44H36" stroke-width="2.4"/>
+    <path d="M31 42h17M31 51h17M43 60h21" stroke-width="2"/>
+    <path d="M59 20v17h13" stroke-width="2.4"/>
+  </g>
+  <path d="M65 14h10v10H65z" fill="#c6a491"/>
+</svg>

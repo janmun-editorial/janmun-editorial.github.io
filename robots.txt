@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://janmun-editorial.github.io/sitemap.xml
