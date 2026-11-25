@@ -1631,3 +1631,22 @@ html[data-theme="light"] #page-home .front-title { color: var(--brand-oxblood); 
 #page-home .front-copy h2 { max-width: 16em; }
 .footer .brand-copy { display: block; max-width: 22em; margin-top: .35em; word-break: keep-all; }
 @media print { #page-home .founding-plate { background: #fff; color: #222; } #page-home .founding-characters, #page-home .founding-note, #page-home .founding-plate-footer p, #page-home .founding-plate-header { color: #222; } }
+
+/* 25. JANMUN brand polish — compact wordmark and editorial hierarchy */
+.brand-mark { width: 88px; height: 40px; object-fit: cover; object-position: center; display: block; }
+.brand { gap: 10px; }
+.brand-text { font-size: 19px; }
+.brand-text small { font-size: 9px; }
+#page-home .front-copy h2 { font-size: clamp(28px, 3vw, 42px); line-height: 1.5; letter-spacing: -.045em; }
+#page-home .front-copy .front-kicker { letter-spacing: .035em; }
+#page-home .front-copy p { line-height: 1.9; }
+#page-home .front-feature { align-items: center; }
+#page-home .founding-plate { background: var(--brand-oxblood); }
+#page-home .front-art figcaption { padding-top: 10px; }
+#page-home .front-contents .entry:focus-visible, #page-home .project:focus-visible { outline-offset: 3px; }
+.footer .brand-copy { margin-bottom: .35em; }
+@media (max-width: 1050px) { .brand-mark { width: 74px; height: 36px; } .brand { gap: 8px; } }
+@media (max-width: 800px) { .brand-mark { width: 70px; height: 34px; } .brand-text { font-size: 17px; } #page-home .front-copy h2 { font-size: clamp(25px, 6vw, 32px); } #page-home .front-feature { align-items: stretch; } }
+@media (max-width: 380px) { .brand-mark { width: 62px; height: 32px; } .brand { gap: 6px; } .brand-text small { font-size: 8px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .view { animation: none; } }
+@media print { .brand-mark { object-fit: contain; } }
