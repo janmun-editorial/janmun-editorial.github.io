@@ -4,7 +4,7 @@ import {dirname} from "node:path";
 import vm from "node:vm";
 function buildPages(source,news){
  const base="https://janmun-editorial.github.io/";
- const meta={home:["잔문 殘文 | 독립 문학 편집실","문학의 바깥을 읽는다. 소설을 읽고, 다듬고, 책으로 만드는 독립 문학 편집실 잔문."],about:["설립의 말 | 잔문 殘文","창작 방식과 이력보다 작품을 대하는 태도를 중요하게 생각하는 잔문의 창립 철학."],editorial:["편집 철학 | 잔문 殘文","무엇을 남길 것인가. 소설의 문장, 인물, 구조와 작가의 고유한 시선을 존중하는 편집 철학."],ethics:["창작 윤리 | 잔문 殘文","AI 활용 여부와 관계없이 창작 과정의 정직함, 타인의 권리와 최종 원고에 대한 책임을 중요하게 생각한다."],members:["잔문 동인 | 온라인 문학 창작 공동체","원고 합평, 작품 연구와 문학 토론을 함께하는 잔문 동인. 첫 정기 모집 준비 중."],books:["잔문 총서 | 소설집 출간 프로젝트","엽편과 단편소설을 중심으로 한 잔문 총서 및 첫 공동 소설집 기획 안내. 출간 준비 중."],submission:["소설 투고 안내 | 잔문 殘文","소설 투고 자격, AI 활용 공개, 심사 및 편집, 출간 비용에 관한 안내. 현재 원고 접수 준비 중."],archive:["문학 아카이브 | 잔문 殘文","창립 문서, 문예지, 작가 기록, 편집 기록, 문학 비평과 출간 기록을 모으는 문학 아카이브."],news:["소식·공식 공지 | 잔문 殘文","잔문의 창립 준비, 동인 및 원고 모집, 출간, 행사와 운영에 관한 공식 안내."],saved:["나의 서재 | 잔문 殘文","브라우저에 저장된 읽기 목록, 문장 수집과 독서 메모를 확인하는 개인 공간."]};
+ const meta={home:["잔문 殘文 | 독립 문학 편집실","문학의 바깥을 읽는다. 읽히지 않던 문학을, 오래 남을 책으로. 독립 문학 편집실 잔문."],about:["설립의 말 | 잔문 殘文","창작 방식과 이력보다 작품을 대하는 태도를 중요하게 생각하는 잔문의 창립 철학."],editorial:["편집 철학 | 잔문 殘文","무엇을 남길 것인가. 소설의 문장, 인물, 구조와 작가의 고유한 시선을 존중하는 편집 철학."],ethics:["창작 윤리 | 잔문 殘文","AI 활용 여부와 관계없이 창작 과정의 정직함, 타인의 권리와 최종 원고에 대한 책임을 중요하게 생각한다."],members:["잔문 동인 | 온라인 문학 창작 공동체","원고 합평, 작품 연구와 문학 토론을 함께하는 잔문 동인. 첫 정기 모집 준비 중."],books:["잔문 총서 | 소설집 출간 프로젝트","엽편과 단편소설을 중심으로 한 잔문 총서 및 첫 공동 소설집 기획 안내. 출간 준비 중."],submission:["소설 투고 안내 | 잔문 殘文","소설 투고 자격, AI 활용 공개, 심사 및 편집, 출간 비용에 관한 안내. 현재 원고 접수 준비 중."],archive:["문학 아카이브 | 잔문 殘文","창립 문서, 문예지, 작가 기록, 편집 기록, 문학 비평과 출간 기록을 모으는 문학 아카이브."],news:["소식·공식 공지 | 잔문 殘文","잔문의 창립 준비, 동인 및 원고 모집, 출간, 행사와 운영에 관한 공식 안내."],saved:["나의 서재 | 잔문 殘文","브라우저에 저장된 읽기 목록, 문장 수집과 독서 메모를 확인하는 개인 공간."]};
  const labels={notice:"공지",members:"동인 모집",submission:"원고 모집",publication:"출간",events:"행사",operations:"운영"};
  const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
  const path=id=>id==="home"?"":id==="journal"?"archive/?category=journal":id+"/";
@@ -16,7 +16,7 @@ function buildPages(source,news){
  .replace(/^    <!-- JANMUN SEO BEGIN -->[\s\S]*?^    <!-- JANMUN SEO END -->\n/gm,"")
  .replace(/^    <title>[^<]*<\/title>\n/gm,"")
  .replace(/^    <meta name="description"[^>]*>\n/gm,"")
- .replace(/js\/main\.js\?v=[^"]+/,"js/main.js?v=1.1.0");
+ .replace(/js\/main\.js\?v=[^"]+/,"js/main.js?v=1.1.1");
  const docs=[["about","01","설립의 말","문학의 바깥을 읽는 이유"],["editorial","02","편집 철학","무엇을 남길 것인가."],["ethics","03","창작 윤리","완벽함이 아니라 정직함."],["members","04","잔문 동인","서로의 가장 이른 독자이자, 가장 오래 남는 독자로."]];
  const rows=docs.map(([id,num,t,s])=>`<div class="archive-row"><span class="eyebrow">${num}</span><a href="#${id}"><span class="archive-record-meta">창립 문서 · 잔문 · 등록 2026-11-24</span><h3>${esc(t)}</h3><p>${esc(s)}</p></a></div>`).join("");
  const pins=news.filter(n=>n.pinned).map(n=>`<div class="notice-pin"><span class="eyebrow">중요 공지</span><a class="notice-pin-title" href="#news/${esc(n.id)}">${esc(n.title)}</a><p>${esc(n.body[0])}</p><span class="notice-date">${esc(n.date)}</span></div>`).join("");

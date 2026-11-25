@@ -3,12 +3,12 @@
 /* 01. Design tokens */
 :root {
   color-scheme: light;
-  --paper: #f5f2eb;
+  --paper: #f1e7d9;
   --ink: #24241f;
   --muted: #68645b;
   --line: #c7c1b4;
   --wash: #ece7dd;
-  --accent: #65313d;
+  --accent: #300106;
   --serif: "Noto Serif KR", "Batang", "AppleMyungjo", serif;
   --sans: "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
   --reading: 18px;
@@ -43,7 +43,7 @@ a:hover { color: var(--accent); }
 button, input, textarea, select { font: inherit; color: inherit; }
 button { cursor: pointer; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-::selection { color: #fff; background: #65313d; }
+::selection { color: #fff; background: #300106; }
 .shell {
   width: min(var(--content-width), 100%);
   margin-inline: auto;
@@ -846,7 +846,7 @@ dialog::backdrop { background: #0008; }
 .front-invitation p { margin: 0; color: var(--muted); }
 .front-invitation > a { flex-shrink: 0; }
 .journal-layout { display: grid; grid-template-columns: minmax(0, 265px) minmax(0, 1fr); gap: clamp(30px, 6vw, 82px); align-items: center; }
-.journal-cover { display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 2/3; padding: 23px; background: #282b25; color: #e8e0d0; border-left: 5px solid #753d3b; }
+.journal-cover { display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 2/3; padding: 23px; background: #282b25; color: #e8e0d0; border-left: 5px solid #300106; }
 .journal-cover strong { align-self: center; font: 400 clamp(58px, 6vw, 90px)/1.2 var(--serif); letter-spacing: -.1em; writing-mode: vertical-rl; }
 .journal-cover span { font-size: 11px; }
 .journal-info h2 { font: 500 clamp(25px, 3vw, 37px)/1.5 var(--serif); margin: 15px 0; word-break: keep-all; }
@@ -990,7 +990,7 @@ dialog::backdrop { background: #0008; }
   height: 32px;
   margin: 0;
   background: #824643;
-  color: #f5f2eb;
+  color: #f1e7d9;
   font: 500 19px/1 var(--serif);
   justify-self: end;
   transform: none;
@@ -1253,7 +1253,7 @@ html[data-theme="dark"] #page-home {
 
 /* 17. Editorial palette — ink, bone and one deep wine accent */
 .reading {
-  --document-accent: #65313d;
+  --document-accent: #300106;
   --document-rule: #c8c0b8;
   --document-panel: #efebe3;
   --document-secondary: #615c55;
@@ -1618,3 +1618,16 @@ html[data-theme="dark"] {
   .mobile-dock, .notice-categories, .notice-search, .notice-pagination,
   .archive-controls, #news-detail .actions { display:none !important; }
 }
+
+/* 2026-11-25 · approved JANMUN visual identity */
+:root { --brand-oxblood: #300106; --brand-ivory: #f1e7d9; }
+html[data-theme="dark"] { --accent: #e2b5bd; }
+#page-home .founding-plate { background: var(--brand-oxblood); color: var(--brand-ivory); }
+#page-home .founding-characters, #page-home .founding-note, #page-home .founding-plate-footer p, #page-home .founding-plate-header { color: var(--brand-ivory); }
+#page-home .founding-plate-header, #page-home .founding-note, #page-home .founding-plate-footer, #page-home .founding-seal { border-color: #9c7477; }
+html[data-theme="light"] .primary { background: var(--brand-oxblood); border-color: var(--brand-oxblood); color: var(--brand-ivory); }
+html[data-theme="light"] .primary:hover { background: #592e32; border-color: #592e32; color: var(--brand-ivory); }
+html[data-theme="light"] #page-home .front-title { color: var(--brand-oxblood); }
+#page-home .front-copy h2 { max-width: 16em; }
+.footer .brand-copy { display: block; max-width: 22em; margin-top: .35em; word-break: keep-all; }
+@media print { #page-home .founding-plate { background: #fff; color: #222; } #page-home .founding-characters, #page-home .founding-note, #page-home .founding-plate-footer p, #page-home .founding-plate-header { color: #222; } }

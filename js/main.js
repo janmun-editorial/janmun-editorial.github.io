@@ -77,7 +77,7 @@
     $("#theme").title = dark ? "밝은 화면" : "어두운 화면";
     $("#theme").setAttribute("aria-label", dark ? "밝은 화면으로 전환" : "어두운 화면으로 전환");
     const themeMeta = $('meta[name="theme-color"]');
-    if (themeMeta) themeMeta.content = dark ? "#20221f" : "#f5f2eb";
+    if (themeMeta) themeMeta.content = dark ? "#20221f" : "#f1e7d9";
     write("theme", state.theme);
   }
 
